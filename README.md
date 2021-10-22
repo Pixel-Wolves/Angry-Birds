@@ -1,10 +1,10 @@
-# angryBirdsStage2
+# Angry-Birds
 Angry Birds
 
 Last Updates:
+Fixed bird respawn
 Added web tab title
 Fixed slingshot issue
-Made the bird respawn at the slingshot
 
 Pending bugfixes:
 Fix bird's movement, you can still move it even after you already did your shot
