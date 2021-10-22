@@ -1,5 +1,5 @@
 class Slingshot{
-    constructor(bodyA, pointB, lenghtChain){
+    constructor(bodyA, pointB, lenghtChain, shooted){
         var options={
             bodyA : bodyA,
             pointB : pointB,
@@ -10,6 +10,7 @@ class Slingshot{
         this.sling2 = loadImage("sprites/sling2.png");
         this.sling3 = loadImage("sprites/sling3.png");
         
+        this.shooted = shooted;
         this.pointB = pointB;
         this.sling = Constraint.create(options);
         World.add(world,this.sling);
@@ -40,16 +41,18 @@ class Slingshot{
     }
 
     stretchString(){
-        if(mouseIsPressed && mouseButton == LEFT){
+        if(mouseIsPressed && mouseButton == LEFT && this.shooted == false){
             Matter.Body.setPosition(bird.body,{x:mouseX, y:mouseY});
         }
     }
 
     fly(){
         this.sling.bodyA = null;
+        this.shooted = true;
     }
 
     attach(body){
         this.sling.bodyA = body;
+        this.shooted = false;
     }
 }

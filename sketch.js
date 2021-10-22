@@ -6,6 +6,7 @@ const Constraint = Matter.Constraint;
 var engine, world;
 var box1, pig1;
 var backgroundImg;
+var shooted = false;
 
 var platform;
 //var contrainedLog, chain;
@@ -45,7 +46,7 @@ function setup(){
 
     log6 = new Log(230,180,80,PI/2);
 
-    slingshot = new Slingshot(bird.body,{x:200, y:50},10);
+    slingshot = new Slingshot(bird.body,{x:200, y:50},10, shooted);
 }
 
 function draw(){
