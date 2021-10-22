@@ -39,6 +39,12 @@ class Slingshot{
         image(this.sling2, 170, 20);
     }
 
+    stretchString(){
+        if(mouseIsPressed && mouseButton == LEFT){
+            Matter.Body.setPosition(bird.body,{x:mouseX, y:mouseY});
+        }
+    }
+
     fly(){
         this.sling.bodyA = null;
     }

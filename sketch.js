@@ -73,13 +73,7 @@ function draw(){
     //chain.display();
 
     slingshot.display();
-
-    if(mouseIsPressed){
-        if(mouseButton == LEFT){
-            bird.body.position.x = mouseX;
-            bird.body.position.y = mouseY;
-        }
-    }
+    slingshot.stretchString();
 }
 
 function mouseReleased(){
