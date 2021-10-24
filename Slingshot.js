@@ -1,5 +1,5 @@
 class Slingshot{
-    constructor(bodyA, pointB, lenghtChain, shooted){
+    constructor(bodyA, pointB, lenghtChain, shooted, gameState){
         var options={
             bodyA : bodyA,
             pointB : pointB,
@@ -13,6 +13,7 @@ class Slingshot{
         this.shooted = shooted;
         this.pointB = pointB;
         this.sling = Constraint.create(options);
+        this.gameState = gameState;
         World.add(world,this.sling);
     }
 
@@ -41,7 +42,7 @@ class Slingshot{
     }
 
     stretchString(){
-        if(mouseIsPressed && mouseButton == LEFT && this.shooted == false){
+        if(mouseIsPressed && mouseButton === LEFT && this.shooted === false && this.gameState !== "Launched"){
             Matter.Body.setPosition(bird.body,{x:mouseX, y:mouseY});
         }
     }

@@ -9,6 +9,7 @@ var backgroundImg;
 var shooted = false;
 
 var platform;
+var gameState = "OnSling";
 //var contrainedLog, chain;
 //var log6;
 
@@ -46,7 +47,7 @@ function setup(){
 
     log6 = new Log(230,180,80,PI/2);
 
-    slingshot = new Slingshot(bird.body,{x:200, y:50},10, shooted);
+    slingshot = new Slingshot(bird.body,{x:200, y:50},10, shooted, gameState);
 }
 
 function draw(){
@@ -79,11 +80,13 @@ function draw(){
 
 function mouseReleased(){
     slingshot.fly();
+    gameState = "Launched";
 }
 
 function keyPressed(){
     if(keyCode == 32){
         slingshot.attach(bird.body);
         Matter.Body.setPosition(bird.body,{x:200, y:50});
+        gameState = "OnSling";
     }
 }
