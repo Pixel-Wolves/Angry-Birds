@@ -98,6 +98,8 @@ function keyPressed(){
     if(keyCode == 32){
         slingshot.attach(bird.body);
         Matter.Body.setPosition(bird.body,{x:200, y:50});
+        Matter.Body.setVelocity(bird.body,{x:0, y:0});
+        bird.trajectory = [];
         gameState = "OnSling";
     }
 }
